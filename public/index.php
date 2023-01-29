@@ -6,14 +6,13 @@ para acessar o diretorio innout, se fosse 3 voltaria 3 diretórios, e assim por 
 // O arquivo config.php está configurado para chamar o arquivo database.php, por isso não é 
 // necessário chamar o arquivo database.php
 require_once(dirname(__FILE__, 2) . '/src/config/config.php'); 
-require_once(dirname(__FILE__, 2) . '/src/models/User.php'); 
 
-$user = new User(['name' => 'João', 'email' => 'joaotonhao@teste.com']);
+$uri = urldecode(
+    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+);
 
-print_r(User::get(['id' => 1], 'id, name, email'));
-echo '<br>';
+if($uri === '/' || $uri === '' || $uri === 'index.php') {
+    $uri = '/loginController.php';
+}
 
-foreach(User::get([], 'name') as $user) {
-    echo $user->name;
-    echo '<br>';
-} 
+require_once(CONTROLLER_PATH . "/{$uri}");
