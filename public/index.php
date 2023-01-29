@@ -12,7 +12,7 @@ $uri = urldecode(
 );
 
 if($uri === '/' || $uri === '' || $uri === 'index.php') {
-    $uri = '/loginController.php';
+    $uri = '/pointRegisterController.php';
 }
 
 require_once(CONTROLLER_PATH . "/{$uri}");

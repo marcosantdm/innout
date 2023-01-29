@@ -1,5 +1,6 @@
 <?php
 loadModel('Login');
+session_start();
 $exception = null;
 
 if(count($_POST) > 0) {
@@ -7,7 +8,7 @@ if(count($_POST) > 0) {
     $login = new Login($_POST);
     try {
         $user = $login->checkLogin();
-        print_r($user);
+        $_SESSION['user'] = $user;
         header("Location: pointRegisterController.php");
     } catch (AppException $e) {
         $exception = $e;
