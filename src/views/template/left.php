@@ -2,25 +2,25 @@
     <nav class="menu mt-3">
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="pointRegister.php">
+                <a href="pointRegisterController.php">
                     <i class="icofont-ui-check mr-2"></i>
                     Registrar Ponto
                 </a>
             </li>
             <li class="nav-item">
-                <a href=".php">
+                <a href="monthlyReportController.php">
                     <i class="icofont-ui-calendar mr-2"></i>
                     Relatório Mensal
                 </a>
             </li>
             <li class="nav-item">
-                <a href=".php">
+                <a href="managerReportController.php">
                     <i class="icofont-chart-histogram mr-2"></i>
                     Relatório Gerencial
                 </a>
             </li>
             <li class="nav-item">
-                <a href=".php">
+                <a href="usersController.php">
                     <i class="icofont-users mr-2"></i>
                     Usuários
                 </a>
@@ -31,7 +31,7 @@
         <div class="sidebar-widget">
             <i class="icon icofont-hour-glass text-primary"></i>
             <div class="info">
-                <span class="main text-primary">
+                <span class="main text-primary" <?= $activeClock === 'workedInterval' ? 'active-clock' : '' ?>>
                     <?= $workedInterval ?>
                 </span>
                 <span class="label text-muted">HORAS TRABALHADAS</span>
@@ -41,7 +41,7 @@
         <div class="sidebar-widget">
             <i class="icon icofont-ui-alarm text-danger"></i>
             <div class="info">
-                <span class="main text-danger">
+                <span class="main text-danger" <?= $activeClock === 'exitTime' ? 'active-clock' : '' ?>>
                     <?= $exitTime ?>
                 </span>
                 <span class="label text-muted">HORAS DE SAIDA</span>

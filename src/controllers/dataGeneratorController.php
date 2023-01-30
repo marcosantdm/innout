@@ -1,5 +1,4 @@
 <?php
-loadModel('WorkingHours');
 error_reporting(0);
 
 Database::executeSQL('DELETE FROM working_hours');
@@ -13,7 +12,7 @@ function getDayTemplateByOdds($regularRate, $extraRate, $lazyRate)
         'time2' => '12:00:00',
         'time3' => '13:00:00',
         'time4' => '17:00:00',
-        'workedTime' => DAILY_TIME
+        'worked_time' => DAILY_TIME
     ];
 
     $extraHourDayTemplate = [
@@ -21,7 +20,7 @@ function getDayTemplateByOdds($regularRate, $extraRate, $lazyRate)
         'time2' => '12:00:00',
         'time3' => '13:00:00',
         'time4' => '18:00:00',
-        'workedTime' => DAILY_TIME + 3600
+        'worked_time' => DAILY_TIME + 3600
     ];
 
     $lazyDayTemplate = [
@@ -29,7 +28,7 @@ function getDayTemplateByOdds($regularRate, $extraRate, $lazyRate)
         'time2' => '12:00:00',
         'time3' => '13:00:00',
         'time4' => '17:00:00',
-        'workedTime' => DAILY_TIME - 1800
+        'worked_time' => DAILY_TIME - 1800
     ];
 
     $value = rand(0, 100);
