@@ -1,5 +1,5 @@
 <main class="content">
-
+    
     <?php
     renderTitle(
         'Registrar o Ponto',
