@@ -9,6 +9,7 @@ registro diário de funcionários que bateram o ponto e adição e exclusão de 
 | :label: Tecnologias | PHP, MySQL, html, Bootstrap, Javascript
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
+![](/extras/img/Projeto%20Pronto.png#vitrinedev)
 
 ## Detalhes do projeto
 
